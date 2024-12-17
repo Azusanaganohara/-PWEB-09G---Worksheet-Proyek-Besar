@@ -1,0 +1,11 @@
+CREATE TABLE penyewa (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_penyewa VARCHAR(100) NOT NULL, 
+    no_hp VARCHAR(15) NOT NULL, 
+    alamat TEXT, 
+    banyak_box INT NOT NULL, 
+    tipe_box VARCHAR(50), 
+    tanggal_penyewaan DATETIME DEFAULT CURRENT_TIMESTAMP, 
+    lama_penitipan INT NOT NULL 
+);
+
