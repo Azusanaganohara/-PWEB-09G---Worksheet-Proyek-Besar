@@ -48,12 +48,8 @@ def edit_penyewa(id):
     data =  edit_penyewa_function(penyewa)
     return render_template('editpenyewa.html', penyewa=penyewa, data=data)
 
-@main.route('/deletepenyewa/<int:id>', methods=['POST'])
+@main.route('/deletepenyewa/<int:id>', methods=['GET', 'POST'])
 def delete_penyewa(id):
     penyewa = Penyewa.get_by_id(id)
-    if penyewa:
-        db.session.delete(penyewa)
-        db.session.commit()
-        return redirect('/')
-    else:
-        return "Data tidak ditemukan", 404
+    data = delete_penyewa_function(penyewa)
+    return redirect(url_for('main.home'))    
