@@ -50,3 +50,4 @@ def edit_penyewa_function(data):
 def delete_penyewa_function(penyewa):
     db.session.delete(penyewa)  
     db.session.commit()
+    pass
