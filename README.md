@@ -67,7 +67,6 @@ Mengembangkan aplikasi berbasis web yang memungkinkan pengguna untuk:
 |├── config/
 |├── models/
 |├── routes/
-|└── tests/
 |└── README.md
 ```
 
