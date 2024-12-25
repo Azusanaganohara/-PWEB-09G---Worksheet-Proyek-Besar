@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - BOX INC</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}">
+    <link href="{{ url_for('static', filename='css/style.main.css') }}" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <div class="logo-container" href="/">
+            <img src="{{ url_for('static', filename='logo header 1.png') }}" alt="BOX INC Logo" class="logo">
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="#about">About</a>
+            <a href="/datapenyewa">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <div class="payment-container">
+        <h1>Payment Details</h1>
+        <p>Thank you for your submission! Here are the details of your request:</p>
+        <ul id="payment-details">
+            <li><strong>Nama Penyewa:</strong> {{ data.nama_penyewa }}</li>
+            <li><strong>No HP:</strong> {{ data.no_hp }}</li>
+            <li><strong>Alamat:</strong> {{ data.alamat }}</li>
+            <li><strong>Banyak Box:</strong> {{ data.banyak_box }}</li>
+            <li><strong>Tipe Box:</strong> {{ data.tipe_box }}</li>
+            <li><strong>Tanggal Penyewaan:</strong> {{ data.tanggal_penyewaan }}</li>
+            <li><strong>Lama Penitipan:</strong> {{ data.lama_penitipan }} hari</li>
+        </ul>
+        <button class="btn" onclick="downloadPDF()">Download PDF</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+</body>
+</html>

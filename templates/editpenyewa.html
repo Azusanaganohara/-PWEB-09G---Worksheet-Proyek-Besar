@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-8 col-xl-6">
@@ -70,11 +71,59 @@
                 </div>
 
             </div>
+=======
+    <div class="container my-5 text-center">
+        
+        <button type="button" class="btn btn-primary mb-3">
+            <a href="{{ url_for('main.add_penyewa') }}" class="btn btn-primary text-white">Tambah Penyewa</a>
+        </button>
+        
+        <form action="{{ url_for('main.logout') }}" method="POST">
+            <button type="submit" class="btn btn-danger mb-3">Logout</button>
+        </form>
+        
+        <div class="table-responsive w-70 d-flex p-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID Penyewa</th>
+                        <th scope="col">Nama Penyewa</th>
+                        <th scope="col">No. HP</th>
+                        <th scope="col">Alamat</th>
+                        <th scope="col">Banyak Box</th>
+                        <th scope="col">Tipe Box</th>
+                        <th scope="col">Tanggal Penyewaan</th>
+                        <th scope="col">Lama Penitipan</th>
+                        <th>Penanggung Jawab</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for penyewa in data %}
+                    <tr>
+                        <td>{{ penyewa.id }}</td>
+                        <td>{{ penyewa.nama_penyewa }}</td>
+                        <td>{{ penyewa.no_hp }}</td>
+                        <td>{{ penyewa.alamat }}</td>
+                        <td>{{ penyewa.banyak_box }}</td>
+                        <td>{{ penyewa.tipe_box }}</td>
+                        <td>{{ penyewa.tanggal_penyewaan }}</td>
+                        <td>{{ penyewa.lama_penitipan }}</td>
+                        <td>{{ penyewa.penanggung_jawab }}</td>
+>>>>>>> 2ebfe20 (New update)
 
+                        <td>
+                            <button type="button" class="btn btn-primary">
+                                <a href="{{ url_for('main.edit_penyewa', id=penyewa.id) }}" class="text-white">Edit</a>
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="deletePenyewa({{ penyewa.id }})">Delete</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-
     </div>
- 
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
