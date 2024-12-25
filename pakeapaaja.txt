@@ -8,4 +8,3 @@ pip install flask-restful
 pip install flask-SQLAlchemy
 pip install flask-Migrate
 pip install pymysql
-    
