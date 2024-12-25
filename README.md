@@ -58,19 +58,6 @@ Mengembangkan aplikasi berbasis web yang memungkinkan pengguna untuk:
 
 ---
 
-## 📂 Struktur Folder
-```
--PWEB-09G---Worksheet-Proyek-Besar
-|├── app/
-|   |├── templates/
-|   |└── static/
-|├── config/
-|├── models/
-|├── routes/
-|└── tests/
-|└── README.md
-```
-
 ---
 
 ## 🔧 Cara Menggunakan
@@ -106,12 +93,6 @@ Mengembangkan aplikasi berbasis web yang memungkinkan pengguna untuk:
    [http://localhost:5000](http://localhost:5000)
 
 ---
-
-## 🛠 Fitur Utama
-1. **Registrasi dan Login Pengguna**
-2. **Manajemen Penitipan Barang**
-3. **Notifikasi dan Pelacakan Barang**
-4. **Dashboard untuk Penyedia Jasa**
 
 ---
 

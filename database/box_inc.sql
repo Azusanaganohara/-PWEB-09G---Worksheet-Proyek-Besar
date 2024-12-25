@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2024 at 09:03 AM
+-- Generation Time: Dec 25, 2024 at 03:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -61,9 +61,9 @@ CREATE TABLE `penyewa` (
 --
 
 INSERT INTO `penyewa` (`id`, `nama_penyewa`, `no_hp`, `alamat`, `banyak_box`, `tipe_box`, `tanggal_penyewaan`, `lama_penitipan`, `penanggung_jawab`) VALUES
-(1, 'fahmi', '123456789', 'Tmg City', 1, 'kecil', '16 Desember 2024', 3, NULL),
-(2, 'azrill', '1234', 'Prk City', 2, 'besar', '2024-12-17', 3, NULL),
-(3, 'kodox', '1234567891011', 'Mexico', 1, 'Kecil', '2024-12-25', 3, NULL);
+(9, 'abc', '123', 'disini', 1, 'kecil', '2024-12-17', 1, 'hanafi'),
+(10, 'def', '456', 'disana', 2, 'sedang', '2024-12-18', 2, 'hanafi'),
+(11, 'ghi', '7890', 'dimana', 1, 'besar', '2024-12-19', 1, 'hanafi');
 
 -- --------------------------------------------------------
 
@@ -121,7 +121,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `penyewa`
 --
 ALTER TABLE `penyewa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
