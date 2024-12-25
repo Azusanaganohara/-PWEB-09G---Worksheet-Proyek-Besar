@@ -94,12 +94,6 @@ Mengembangkan aplikasi berbasis web yang memungkinkan pengguna untuk:
 
 ---
 
-## 🛠 Fitur Utama
-1. **Registrasi dan Login Pengguna**
-2. **Manajemen Penitipan Barang**
-3. **Notifikasi dan Pelacakan Barang**
-4. **Dashboard untuk Penyedia Jasa**
-
 ---
 
 ## 📜 Lisensi
