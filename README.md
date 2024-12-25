@@ -58,18 +58,6 @@ Mengembangkan aplikasi berbasis web yang memungkinkan pengguna untuk:
 
 ---
 
-## 📂 Struktur Folder
-```
--PWEB-09G---Worksheet-Proyek-Besar
-|├── app/
-|   |├── templates/
-|   |└── static/
-|├── config/
-|├── models/
-|├── routes/
-|└── README.md
-```
-
 ---
 
 ## 🔧 Cara Menggunakan
