@@ -127,3 +127,17 @@ def delete_penyewa(id):
     db.session.commit()
     flash('Data penyewa berhasil dihapus.', 'success')
     return redirect(url_for('main.home'))
+
+@main.route('/payment', methods=['POST'])
+def payment():
+    data = {
+        "nama_penyewa": request.form.get('nama_penyewa'),
+        "no_hp": request.form.get('no_hp'),
+        "alamat": request.form.get('alamat'),
+        "banyak_box": request.form.get('banyak_box'),
+        "tipe_box": request.form.get('tipe_box'),
+        "tanggal_penyewaan": request.form.get('tanggal_penyewaan'),
+        "lama_penitipan": request.form.get('lama_penitipan')
+    }
+    flash('Payment successful!', 'success')
+    return render_template('payment.html', data=data)
