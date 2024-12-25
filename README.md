@@ -42,3 +42,13 @@ Akses aplikasi melalui browser di http://localhost:3000.
 📜 Lisensi
 
 Proyek ini dilisensikan di bawah Lisensi MIT.
+
+
+
+### Instalasi
+Instalasi modul yang digunakan
+```shell
+python -m venv environment
+environtment\scripts\activate.bat
+pip install -r requirements.txt
+```
