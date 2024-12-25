@@ -10,71 +10,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-lg-8 col-xl-6">
-                <nav >
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="/">Home</a>
-                        </li>
-                    </ol>
-                </nav>
-                <div class="card rounded-3">
-                    <div class="card-body p-4 p-md-5">
-                        <h1 class="mb-4 pb-2 pd-md--0 mb-md-5 px-md-2 text-center">Edit Penyewa</h1>
-                        <form method="POST" action="{{ url_for('main.edit_penyewa', id=penyewa.id) }}">
-                            <div class="form-group">
-                                <label for="nama_penyewa">Nama</label>
-                                <input type="text" id="nama_penyewa" name="nama_penyewa" class="form-control" value="{{ penyewa.nama_penyewa }}" ><br/>
-                            </div>
-                            <div class="form-group">
-                                <label for="no_hp">No HP</label>
-                                <input type="text" id="no_hp" name="no_hp" class="form-control" value="{{ penyewa.no_hp }}" ><br/>
-                            </div>
-                            <div class="form-group">
-                                <label for="alamat">Alamat</label>
-                                <input type="text" id="alamat" name="alamat" class="form-control" value="{{ penyewa.alamat }}" ><br/>
-                            </div>
-                            <div class="form-group">
-                                <label for="banyak_box">Banyak Box</label>
-                                <input type="number" id="banyak_box" name="banyak_box" class="form-control" value="{{ penyewa.banyak_box }}" ><br/>
-                            </div>
-                            <div class="form-group">
-                                <label for="tipe_box">Tipe Box</label>
-                                <select id="tipe_box" name="tipe_box" class="form-control">
-                                    <option value="kecil" {% if penyewa.tipe_box == 'kecil' %}selected{% endif %}>Kecil</option>
-                                    <option value="sedang" {% if penyewa.tipe_box == 'sedang' %}selected{% endif %}>Sedang</option>
-                                    <option value="besar" {% if penyewa.tipe_box == 'besar' %}selected{% endif %}>Besar</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="tanggal_penyewaan">Tanggal Penyewaan</label>
-                                <input type="date" class="form-control" id="tanggal_penyewaan" name="tanggal_penyewaan" value="{{ penyewa.tanggal_penyewaan.strftime('%Y-%m-%d') }}" required>
-                            </div>
-                            <div class="form-group">    
-                                <label for="lama_penitipan">Lama Penitipan</label>
-                                <input type="number" id="lama_penitipan" name="lama_penitipan" class="form-control" value="{{ penyewa.lama_penitipan }}" ><br/>
-                            </div>
-                            <div class="form-group">
-                                <label for="penanggung_jawab">Penanggung Jawab</label>
-                                <input type="text" id="penanggung_jawab" name="penanggung_jawab" class="form-control" value="{{ session['username'] }}" readonly>
-                            </div>
-                            <br/>
-                            <br/>
-                            <button type="submit" class="btn btn-primary text-white">Submit</button>
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-=======
-=======
->>>>>>> 739274f7611d85c2cb005b559f34940a7ce4fa55
     <div class="container my-5 text-center">
         
         <button type="button" class="btn btn-primary mb-3">
@@ -112,11 +47,6 @@
                         <td>{{ penyewa.tanggal_penyewaan }}</td>
                         <td>{{ penyewa.lama_penitipan }}</td>
                         <td>{{ penyewa.penanggung_jawab }}</td>
-<<<<<<< HEAD
->>>>>>> 2ebfe20 (New update)
-=======
->>>>>>> 739274f7611d85c2cb005b559f34940a7ce4fa55
-
                         <td>
                             <button type="button" class="btn btn-primary">
                                 <a href="{{ url_for('main.edit_penyewa', id=penyewa.id) }}" class="text-white">Edit</a>
