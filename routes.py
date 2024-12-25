@@ -95,9 +95,35 @@ def save_penyewa(form_data):
     )
     new_penyewa.save()
 
+@main.route('/datapenyewa', methods=['GET'])
+def view_penyewa():
+    penyewa_data = Penyewa.get_all()
+    return render_template('datapenyewa.html', data=penyewa_data)
+
+def save_penyewa(form_data):
+    nama_penyewa = form_data.get('nama_penyewa')
+    no_hp = form_data.get('no_hp')
+    alamat = form_data.get('alamat')
+    banyak_box = form_data.get('banyak_box')
+    tipe_box = form_data.get('tipe_box')
+    tanggal_penyewaan = form_data.get('tanggal_penyewaan')
+    lama_penitipan = form_data.get('lama_penitipan')
+
+    new_penyewa = Penyewa(
+        nama_penyewa=nama_penyewa,
+        no_hp=no_hp,
+        alamat=alamat,
+        banyak_box=banyak_box,
+        tipe_box=tipe_box,
+        tanggal_penyewaan=tanggal_penyewaan,
+        lama_penitipan=lama_penitipan
+    )
+    new_penyewa.save()
+
 @main.route('/addpenyewa', methods=['GET', 'POST'])
 def add_penyewa():
     if request.method == 'POST':
+<<<<<<< HEAD
 <<<<<<< HEAD
         nama_penyewa = request.form.get('nama_penyewa')
         no_hp = request.form.get('no_hp')
@@ -174,6 +200,27 @@ def payment():
     }
     return render_template('payment.html', data=data)
 
+=======
+        save_penyewa(request.form)
+        return redirect('/')
+    return render_template('addpenyewa.html')
+
+@main.route('/payment', methods=['POST'])
+def payment():
+    if request.method == 'POST':
+        save_penyewa(request.form)
+    data = {
+        "nama_penyewa": request.form.get('nama_penyewa'),
+        "no_hp": request.form.get('no_hp'),
+        "alamat": request.form.get('alamat'),
+        "banyak_box": request.form.get('banyak_box'),
+        "tipe_box": request.form.get('tipe_box'),
+        "tanggal_penyewaan": request.form.get('tanggal_penyewaan'),
+        "lama_penitipan": request.form.get('lama_penitipan')
+    }
+    return render_template('payment.html', data=data)
+
+>>>>>>> 739274f7611d85c2cb005b559f34940a7ce4fa55
 @main.route('/editpenyewa/<int:id>', methods=['GET', 'POST'])
 def edit_penyewa(id):
     penyewa = Penyewa.get_by_id(id)
@@ -236,4 +283,7 @@ def logout():
     flash('You have been logged out.', 'info')
     return redirect(url_for('main.login'))  
 
+<<<<<<< HEAD
 >>>>>>> 2ebfe20 (New update)
+=======
+>>>>>>> 739274f7611d85c2cb005b559f34940a7ce4fa55
