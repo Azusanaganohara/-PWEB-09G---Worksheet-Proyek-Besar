@@ -26,31 +26,39 @@
                         <form method="POST" action="{{ url_for('main.edit_penyewa', id=penyewa.id) }}">
                             <div class="form-group">
                                 <label for="nama_penyewa">Nama</label>
-                                <input type="text" id="nama_penyewa" name="nama_penyewa" class="form-control" placeholder= {{penyewa.nama_penyewa}} ><br/>
+                                <input type="text" id="nama_penyewa" name="nama_penyewa" class="form-control" value="{{ penyewa.nama_penyewa }}" ><br/>
                             </div>
                             <div class="form-group">
                                 <label for="no_hp">No HP</label>
-                                <input type="text" id="no_hp" name="no_hp" class="form-control" placeholder= {{penyewa.no_hp}} ><br/>
+                                <input type="text" id="no_hp" name="no_hp" class="form-control" value="{{ penyewa.no_hp }}" ><br/>
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
-                                <input type="text" id="alamat" name="alamat" class="form-control" placeholder={{penyewa.alamat}}><br/>
+                                <input type="text" id="alamat" name="alamat" class="form-control" value="{{ penyewa.alamat }}" ><br/>
                             </div>
                             <div class="form-group">
                                 <label for="banyak_box">Banyak Box</label>
-                                <input type="text" id="banyak_box" name="banyak_box" class="form-control" placeholder={{penyewa.banyak_box}}><br/>
+                                <input type="number" id="banyak_box" name="banyak_box" class="form-control" value="{{ penyewa.banyak_box }}" ><br/>
                             </div>
                             <div class="form-group">
                                 <label for="tipe_box">Tipe Box</label>
-                                <input type="text" id="tipe_box" name="tipe_box" class="form-control" placeholder={{penyewa.tipe_box}}><br/>
+                                <select id="tipe_box" name="tipe_box" class="form-control">
+                                    <option value="kecil" {% if penyewa.tipe_box == 'kecil' %}selected{% endif %}>Kecil</option>
+                                    <option value="sedang" {% if penyewa.tipe_box == 'sedang' %}selected{% endif %}>Sedang</option>
+                                    <option value="besar" {% if penyewa.tipe_box == 'besar' %}selected{% endif %}>Besar</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="tanggal_penyewaan">Tanggal Penyewaan</label>
-                                <input type="text" id="tanggal_penyewaan" name="tanggal_penyewaan" class="form-control" placeholder={{penyewa.tanggal_penyewaaan}}><br/>
+                                <input type="date" class="form-control" id="tanggal_penyewaan" name="tanggal_penyewaan" value="{{ penyewa.tanggal_penyewaan.strftime('%Y-%m-%d') }}" required>
+                            </div>
+                            <div class="form-group">    
+                                <label for="lama_penitipan">Lama Penitipan</label>
+                                <input type="number" id="lama_penitipan" name="lama_penitipan" class="form-control" value="{{ penyewa.lama_penitipan }}" ><br/>
                             </div>
                             <div class="form-group">
-                                <label for="lama_penitipan">Lama Penitipan</label>
-                                <input type="text" id="lama_penitipan" name="lama_penitipan" class="form-control" placeholder={{penyewa.lama_penitipan}}><br/>
+                                <label for="penanggung_jawab">Penanggung Jawab</label>
+                                <input type="text" id="penanggung_jawab" name="penanggung_jawab" class="form-control" value="{{ session['username'] }}" readonly>
                             </div>
                             <br/>
                             <br/>

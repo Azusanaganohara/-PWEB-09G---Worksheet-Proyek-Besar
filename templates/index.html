@@ -22,13 +22,17 @@
 </head>
 
 <body>
-    <div class="my-5 text-center">
-        <button type="button" class="btn btn-primary">
-            <a href="{{ url_for('main.add_penyewa') }}" class="text-white">Tambah Penyewa</a>
+    <div class="container my-5 text-center">
+        
+        <button type="button" class="btn btn-primary mb-3">
+            <a href="{{ url_for('main.add_penyewa') }}" class="btn btn-primary text-white">Tambah Penyewa</a>
         </button>
-
-        <br/>
-        <div class="w-70 d-flex p-5">
+        
+        <form action="{{ url_for('main.logout') }}" method="POST">
+            <button type="submit" class="btn btn-danger mb-3">Logout</button>
+        </form>
+        
+        <div class="table-responsive w-70 d-flex p-5">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -40,6 +44,7 @@
                         <th scope="col">Tipe Box</th>
                         <th scope="col">Tanggal Penyewaan</th>
                         <th scope="col">Lama Penitipan</th>
+                        <th>Penanggung Jawab</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,17 +58,18 @@
                         <td>{{ penyewa.tipe_box }}</td>
                         <td>{{ penyewa.tanggal_penyewaan }}</td>
                         <td>{{ penyewa.lama_penitipan }}</td>
+                        <td>{{ penyewa.penanggung_jawab }}</td>
+
                         <td>
                             <button type="button" class="btn btn-primary">
                                 <a href="{{ url_for('main.edit_penyewa', id=penyewa.id) }}" class="text-white">Edit</a>
                             </button>
                             <button type="button" class="btn btn-danger" onclick="deletePenyewa({{ penyewa.id }})">Delete</button>
                         </td>
-                        
                     </tr>
                     {% endfor %}
                 </tbody>
-
+            </table>
         </div>
     </div>
  
