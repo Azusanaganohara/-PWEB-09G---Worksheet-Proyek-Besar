@@ -49,6 +49,6 @@ Proyek ini dilisensikan di bawah Lisensi MIT.
 Instalasi modul yang digunakan
 ```shell
 python -m venv environment
-environtment\scripts\activate.bat
+environment\scripts\activate.bat
 pip install -r requirements.txt
 ```
