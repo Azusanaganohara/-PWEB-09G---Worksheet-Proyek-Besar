@@ -237,6 +237,23 @@ p {
 .btn:hover {
     background-color: #555;
 }
+.login-logout {
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    text-align: center; 
+}
+
+.login-logout:hover {
+    background-color: #555;
+    color: white;
+    border-color: #fff;
+}
+
 
 /* Mobile-first approach */
 @media (max-width: 768px) {

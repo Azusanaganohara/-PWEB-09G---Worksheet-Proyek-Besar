@@ -18,8 +18,13 @@
             <a href="#about">About</a>
             <a href="/datapenyewa">Services</a>
             <a href="#contact">Contact</a>
-        </nav>
-    </header>
+            {% if logged_in %}
+            <a href="/logout" class="login-logout">Logout</a>
+        {% else %}
+            <a href="/logout" class="login-logout">Logout</a>
+        {% endif %}
+    </nav>
+</header>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <div class="payment-container">
         <h1>Payment Details</h1>

@@ -51,11 +51,11 @@ def view_penyewa():
     penyewa_data = Penyewa.query.all()
     return render_template("datapenyewa.html", data=penyewa_data)  
 
-@main.route('/logout', methods=['POST'])
+@main.route('/logout', methods=['GET', 'POST'])
 def logout():
     session.clear()
     flash('You have been logged out.', 'info')
-    return redirect(url_for('main.login'))
+    return render_template('login.html')
 
 @main.route('/')
 def home():

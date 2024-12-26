@@ -15,10 +15,15 @@
         <nav>
             <a href="/">Home</a>
             <a href="#about">About</a>
-            <a href="#services">Services</a>
+            <a href="/datapenyewa">Services</a>
             <a href="#contact">Contact</a>
-        </nav>
-    </header>
+            {% if logged_in %}
+            <a href="{{ url_for('main.logout') }}" class="login-logout">Logout</a>
+        {% else %}
+            <a href="{{ url_for('main.login') }}" class="login-logout">Login</a>
+        {% endif %}
+    </nav>
+</header>
   <body>
     <div class="container">
         <div class="row justify-content-center">

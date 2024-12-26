@@ -18,6 +18,14 @@
             <a href="#about">About</a>
             <a href="/datapenyewa">Services</a>
             <a href="#contact">Contact</a>
+            {% if logged_in %}
+            <a href="{{ url_for('main.login') }}" class="login-logout">Login</a>
+            {% else %}
+            <a href="{{ url_for('main.logout') }}" class="login-logout">Login</a>
+            {% endif %}
+        
+    </nav>
+</header>
         </nav>
     </header>
     
